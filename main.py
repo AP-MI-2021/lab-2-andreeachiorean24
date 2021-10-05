@@ -23,17 +23,29 @@ def is_palindrome(n):
     if n==nou:
         return True
     return False
-
 def test_is_palindrome():
-    """
-    citim un numar de la tastatura
-    """
-    n = int(input("Enter any number : "))
-    if (is_palindrome(n)):
-        print("True " + str(n)
- )
-    else:
-        print("False")
+    assert is_palindrome(121)==True
+    assert is_palindrome(234)==False
+    assert is_palindrome(565)==True
+def main():
 
-#run the test function
+    while True:
+        print('1.Verificam daca numarul este palindrom')
+        print('2.Calculam cmmmc')
+        print('3.Iesire')
+        optiune=input('Alegeti o optiune')
+        if optiune=='1':
+            """
+               citim un numar de la tastatura
+               """
+            n = int(input("Enter any number : "))
+            if (is_palindrome(n)):
+                print("True " + str(n)
+                      )
+            else:
+                print("False")
+        elif optiune=='2':
+            nr = int(input("Enter number of elements : "))
+
 test_is_palindrome()
+main()
