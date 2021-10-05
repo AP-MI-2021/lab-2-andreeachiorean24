@@ -1,34 +1,39 @@
-'''
-Returneaza true daca n este prim si false daca nu.
-'''
-def is_prime(n):
-  # codul vostru aici
-  
-  
-'''
-Returneaza produsul numerelor din lista lst.
-'''
-def get_product(lst):
-  # codul vostru aici
-  
-  
-'''
-Returneaza CMMDC a doua numere x si y folosind primul algoritm.
-'''
-def get_cmmdc_v1(x, y):
-  # codul vostru aici
-  
-  
-'''
-Returneaza CMMDC a doua numere x si y folosind al doilea algoritm.
-'''
-def get_cmmdc_v2(x, y):
-  # codul vostru aici
-  
-  
-def main():
-  # interfata de tip consola aici
-	print('Am implementat interfata!')
+def is_palindrome(n):
+    """
+    :param n: numar intreg
+    :return: True daca numarul este palindrom sau False daca numarul nu este palindrom
+    """
+    copie = n
+    """"
+    calculam inversul numarului
+    """
+    nou = 0
+    while (copie > 0):
+        """
+        extragem ultima cifra
+        """
+        digit = copie % 10
+        nou = nou * 10 + digit
+        copie = copie // 10
 
-if __name__ == '__main__':
-  main()
+    print("Numarul invers este " + str(nou))
+    """
+    comparam numarul nou cu cel original
+    """
+    if n==nou:
+        return True
+    return False
+
+def test_is_palindrome():
+    """
+    citim un numar de la tastatura
+    """
+    n = int(input("Enter any number : "))
+    if (is_palindrome(n)):
+        print("True " + str(n)
+ )
+    else:
+        print("False")
+
+#run the test function
+test_is_palindrome()
