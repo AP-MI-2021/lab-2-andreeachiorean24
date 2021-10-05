@@ -27,6 +27,26 @@ def test_is_palindrome():
     assert is_palindrome(121)==True
     assert is_palindrome(234)==False
     assert is_palindrome(565)==True
+def get_cmmmc(list):
+    lcm = list[0]
+    for i in range(1, len(list)):
+        """
+        alegem numarul mai mare
+        """
+        if lcm > list[i]:
+            max = lcm
+        else:
+            max= list[i]
+
+        while (True):
+            if ((max % lcm == 0) and (max % list[i] == 0)):
+                lcm = max
+                break
+            max += 1
+
+    return lcm
+
+
 def main():
 
     while True:
@@ -45,7 +65,29 @@ def main():
             else:
                 print("False")
         elif optiune=='2':
+            """
+                introducem numarul de numere
+                """
             nr = int(input("Enter number of elements : "))
 
+            """
+            am creat o lista
+            """
+            lst = []
+
+            for i in range(0, nr):
+                element = int(input())
+                """
+                adaugam elementul
+                """
+                lst.append(element)
+
+            # print the list
+            print(lst)
+
+            cmmmc = get_cmmmc(lst)
+            print("Cel mai mic multiplu comun este: " + str(cmmmc))
+
 test_is_palindrome()
+
 main()
