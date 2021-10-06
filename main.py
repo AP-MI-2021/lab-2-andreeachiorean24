@@ -126,5 +126,6 @@ def main():
 
 test_is_palindrome()
 test_is_superprime()
+test_is_superprime()
 if __name__ == '__main__':
     main()
