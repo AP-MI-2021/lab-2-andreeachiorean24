@@ -16,7 +16,6 @@ def is_palindrome(n):
         nou = nou * 10 + digit
         copie = copie // 10
 
-    print("Numarul invers este " + str(nou))
     """
     comparam numarul nou cu cel original
     """
@@ -45,6 +44,9 @@ def get_cmmmc(list):
             max += 1
 
     return lcm
+def test_get_cmmmc():
+    assert get_cmmmc(2,3)
+    assert get_cmmmc(4,7,5)
 def isprime(nr):
     """
     determinam daca numarul este prim
