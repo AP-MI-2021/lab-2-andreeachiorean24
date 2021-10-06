@@ -45,14 +45,41 @@ def get_cmmmc(list):
             max += 1
 
     return lcm
+def isprime(nr):
+    """
+    determinam daca numarul este prim
+    :param nr: nr intreg
+    :return: True daca numarul este prim sau False in caz contrar
+    """
+    if nr < 2:
+        return False
+    for i in range(2, nr):
+        if nr % i == 0:
+            return False
 
+    return True
+def issuperprime(nr):
+    """
+    determinam daca numarul este superprim
+    :param nr: numar intreg
+    :return: True daca numarul este superprime sau False in caz contrar
+    """
+    while nr > 0:
+        if not isprime(nr):
+            return False
+        nr=nr//10
+    return True
+def test_is_superprime():
+    assert issuperprime(233)==True
+    assert issuperprime(237)==False
 
 def main():
 
     while True:
         print('1.Verificam daca numarul este palindrom')
         print('2.Calculam cmmmc')
-        print('3.Iesire')
+        print('3.Determinam daca numarul este superprim')
+        print('4.Iesire')
         optiune=input('Alegeti o optiune')
         if optiune=='1':
             """
@@ -87,7 +114,15 @@ def main():
 
             cmmmc = get_cmmmc(lst)
             print("Cel mai mic multiplu comun este: " + str(cmmmc))
+        elif optiune=='3':
+            nr2 = int(input("Introduceti numar: "))
+            print(issuperprime(nr2))
+        elif optiune=='4':
+            break
+        else:
+            print("Optiune gresita")
 
 test_is_palindrome()
-
-main()
+test_is_superprime()
+if __name__ == '__main__':
+    main()
